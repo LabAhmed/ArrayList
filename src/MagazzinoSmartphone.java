@@ -8,13 +8,13 @@ public class MagazzinoSmartphone {
 
     public MagazzinoSmartphone(MagazzinoSmartphone other) {
         for (int i = 0; i < other.smartphones.size(); i++) {
-            smartphones.add(other.smartphones.get(i));
+            smartphones.add(new Smartphone(other.smartphones.get(i)));
         }
     }
 
     public void addSmartphone(Smartphone smartphone) {
         if (smartphone != null) {
-            smartphones.add(smartphone);
+            smartphones.add(new Smartphone(smartphone));
         }
     }
 
@@ -45,7 +45,7 @@ public class MagazzinoSmartphone {
         MagazzinoSmartphone magazzinoSmartphone = new MagazzinoSmartphone();
         for (int i = 0; i < smartphones.size(); i++) {
             if (smartphones.get(i).getStorageCapacity() == storageCapacity) {
-                magazzinoSmartphone.addSmartphone(smartphones.get(i));
+                magazzinoSmartphone.addSmartphone(new Smartphone(smartphones.get(i)));
             }
         }
         return magazzinoSmartphone;
@@ -55,7 +55,7 @@ public class MagazzinoSmartphone {
         MagazzinoSmartphone magazzinoSmartphone = new MagazzinoSmartphone();
         for (int i = 0; i < smartphones.size(); i++) {
             if (smartphones.get(i).getPrice() <= maxPrice && smartphones.get(i).getPrice() >= minPrice) {
-                magazzinoSmartphone.addSmartphone(smartphones.get(i));
+                magazzinoSmartphone.addSmartphone(new Smartphone(smartphones.get(i)));
             }
         }
         return magazzinoSmartphone;
