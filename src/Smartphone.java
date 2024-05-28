@@ -4,7 +4,7 @@ public class Smartphone {
     private int storageCapacity = 0;
     private double price = 0.0;
 
-    public Smartphone() {   };
+    public Smartphone() {   }
 
     public Smartphone(String brand, String model, int storageCapacity, double price) {
         this.brand = brand;
