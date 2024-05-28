@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class MagazzinoSmartphone {
     private ArrayList<Smartphone> smartphones = new ArrayList<>();
 
-    public MagazzinoSmartphone() {    }
+    public MagazzinoSmartphone() { 
+    }
 
     public MagazzinoSmartphone(MagazzinoSmartphone other) {
         for (int i = 0; i < other.smartphones.size(); i++) {
