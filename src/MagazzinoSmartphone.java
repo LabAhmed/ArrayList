@@ -7,9 +7,7 @@ public class MagazzinoSmartphone {
     }
 
     public MagazzinoSmartphone(MagazzinoSmartphone other) {
-        for (int i = 0; i < other.smartphones.size(); i++) {
-            smartphones.add(new Smartphone(other.smartphones.get(i)));
-        }
+        ArrayList smartphones = (ArrayList)other.smartphones.clone();
     }
 
     public void addSmartphone(Smartphone smartphone) {
