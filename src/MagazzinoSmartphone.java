@@ -95,6 +95,8 @@ public class MagazzinoSmartphone {
                     ugualianza = false;
                 }
             }
+        }else{
+            ugualianza = false;
         }
         return ugualianza;
     }
