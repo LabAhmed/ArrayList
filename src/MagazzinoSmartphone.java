@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class MagazzinoSmartphone {
     private ArrayList<Smartphone> smartphones = new ArrayList<>();
 
-    public MagazzinoSmartphone() { 
+    public MagazzinoSmartphone() {
     }
 
     public MagazzinoSmartphone(MagazzinoSmartphone other) {
-        ArrayList smartphones = (ArrayList)other.smartphones.clone();
+        this.smartphones = (ArrayList<Smartphone>) other.smartphones.clone();
     }
 
     public void addSmartphone(Smartphone smartphone) {
@@ -74,27 +74,28 @@ public class MagazzinoSmartphone {
 
     public boolean equals(Object obj) {
         boolean ugualianza = true;
-        if (this != obj) {
-            if (obj instanceof MagazzinoSmartphone) {
-                MagazzinoSmartphone m = (MagazzinoSmartphone) obj;
-                int i = 0;
-                if (m.smartphones.size() == this.smartphones.size()) {
-                    while (i < smartphones.size() && ugualianza == true) {
-                        if (!this.smartphones.get(i).equals(m.smartphones.get(i))) {
-                            ugualianza = false;
-                        } else {
-                            i++;
+        if (obj != null) {
+            if (this != obj) {
+                if (obj instanceof MagazzinoSmartphone) {
+                    MagazzinoSmartphone m = (MagazzinoSmartphone) obj;
+                    int i = 0;
+                    if (m.smartphones.size() == this.smartphones.size()) {
+                        while (i < smartphones.size() && ugualianza == true) {
+                            if (!this.smartphones.get(i).equals(m.smartphones.get(i))) {
+                                ugualianza = false;
+                            } else {
+                                i++;
+                            }
                         }
+                    } else {
+                        ugualianza = false;
                     }
+
                 } else {
                     ugualianza = false;
                 }
-
-            } else {
-                ugualianza = false;
             }
         }
-
         return ugualianza;
     }
 
