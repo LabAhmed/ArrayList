@@ -73,32 +73,22 @@ public class MagazzinoSmartphone {
     }
 
     public boolean equals(Object obj) {
-        boolean ugualianza = true;
-        if (obj != null) {
-            if (this != obj) {
-                if (obj instanceof MagazzinoSmartphone) {
-                    MagazzinoSmartphone m = (MagazzinoSmartphone) obj;
-                    int i = 0;
-                    if (m.smartphones.size() == this.smartphones.size()) {
-                        while (i < smartphones.size() && ugualianza == true) {
-                            if (!this.smartphones.get(i).equals(m.smartphones.get(i))) {
-                                ugualianza = false;
-                            } else {
-                                i++;
-                            }
-                        }
-                    } else {
-                        ugualianza = false;
-                    }
-
-                } else {
-                    ugualianza = false;
-                }
-            }
-        }else{
-            ugualianza = false;
+        boolean verifica = false;
+        if(this == obj)
+         verifica = true;
+        else{
+         if( obj instanceof MagazzinoSmartphone){
+             MagazzinoSmartphone m = (MagazzinoSmartphone)obj;
+             if(m.smartphones.size() == this.smartphones.size()){
+                 if(this.smartphones.containsAll(m.smartphones))
+                     verifica=true;
+             }
+         }
         }
-        return ugualianza;
-    }
+ 
+         return verifica;
+     }
+ 
+ }
 
-}
+
