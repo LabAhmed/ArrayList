@@ -1,4 +1,5 @@
-public class Smartphone {
+public class Smartphone implements Comparable<Smartphone>{
+
     private String brand = "";
     private String model = "";
     private int storageCapacity = 0;
@@ -74,6 +75,16 @@ public class Smartphone {
             }
         }
         return ugualianza;
+    }
+
+    public int compareTo(Smartphone s){       
+        int result = 0;
+        if(this.price < s.price){
+            result = -1;
+        }else if (this.price > s.price) {
+            result = 1;
+        }
+        return result;
     }
 
 }

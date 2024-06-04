@@ -16,7 +16,7 @@ public class App {
         // Brand: OnePlus, Model: 9 Pro, Storage Capacity: 256GB, Price: 1069.99
         System.out.println(magazzinoSmartphone);
 
-        magazzinoSmartphone.removeSmartphone(smartphone2);
+        //magazzinoSmartphone.removeSmartphone(smartphone2);
         System.out.println("magazzinoSmartphone senza Samsung Galaxy S21");
         System.out.println(magazzinoSmartphone);
         System.out.println("magazzinoSmartphone.getSmartphoneByBrand(\"Apple\")");
@@ -41,5 +41,17 @@ public class App {
 
         // Generate test cases for equals method in MagazzinoSmartphone
         System.out.println(magazzinoSmartphone.equals(magazzinoSmartphone2)); // true
+
+        // Remouve con una depp copy 
+        // magazzinoSmartphone.removeSmartphone(magazzinoSmartphone2.getSmartphone(0));
+        // System.out.println(magazzinoSmartphone);//niente remouve
+        System.out.println(magazzinoSmartphone);
+        magazzinoSmartphone.ordinaPerPrezzo();
+        System.out.println(magazzinoSmartphone);
+        System.out.println(magazzinoSmartphone);
+        
+        magazzinoSmartphone.ordinaPerBrand();
+        System.out.println(magazzinoSmartphone);
+        
     }
 }

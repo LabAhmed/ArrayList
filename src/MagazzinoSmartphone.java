@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Collections;
 public class MagazzinoSmartphone {
     private ArrayList<Smartphone> smartphones = new ArrayList<>();
 
@@ -7,19 +7,21 @@ public class MagazzinoSmartphone {
     }
 
     public MagazzinoSmartphone(MagazzinoSmartphone other) {
-        this.smartphones = (ArrayList<Smartphone>) other.smartphones.clone();
+        for (Smartphone s : other.smartphones) {
+            this.smartphones.add(new Smartphone(s));
+        }
     }
 
     public void addSmartphone(Smartphone smartphone) {
-        if (smartphone != null) {
-            smartphones.add(new Smartphone(smartphone));
-        }
+        smartphones.add(new Smartphone(smartphone));
     }
 
     public void removeSmartphone(Smartphone smartphone) {
         smartphones.remove(smartphone);
     }
-
+    public Smartphone getSmartphone(int i){
+        return smartphones.get(i);
+    }
     public Smartphone[] getSmartphonesArray() {
         Smartphone[] smartphoneArray = new Smartphone[smartphones.size()];
         System.arraycopy(smartphones, 0, smartphoneArray, 0, smartphones.size());
@@ -71,7 +73,16 @@ public class MagazzinoSmartphone {
     public int getCount() {
         return smartphones.size();
     }
+    public void ordinaPerPrezzo(){
+        Collections.sort(smartphones);
+    }
 
+    public void ordinaPerBrand(){
+        smartphones.sort((a,b) -> {
+            return a.getBrand().compareTo(b.getBrand());
+        });
+    }
+    
     public boolean equals(Object obj) {
         boolean verifica = false;
         if(this == obj)
